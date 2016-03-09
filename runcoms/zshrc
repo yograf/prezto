@@ -11,3 +11,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+alias d=drush
+alias gs="git status"
+alias c=clear
+alias v=nvim
+alias gps="git push origin master"
+alias gpl="git pull --rebase"
+alias sv="sudo nvim"
