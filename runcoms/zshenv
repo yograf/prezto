@@ -24,3 +24,9 @@ function strip_diff_leading_symbols(){
     # actually strips the leading symbols
   sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
 }
+
+
+## Print a horizontal rule
+rule () {
+        printf "%$(tput cols)s\n"|tr " " "─"
+      }
