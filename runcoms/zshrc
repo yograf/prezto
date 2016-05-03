@@ -19,3 +19,6 @@ alias v=nvim
 alias gps="git push origin master"
 alias gpl="git pull --rebase"
 alias sv="sudo nvim"
+
+export NVM_DIR="/home/y/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
