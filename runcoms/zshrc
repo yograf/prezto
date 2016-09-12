@@ -20,5 +20,18 @@ alias gps="git push origin master"
 alias gpl="git pull --rebase"
 alias sv="sudo nvim"
 
-export NVM_DIR="/home/y/.nvm"
+
+if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
+
+
+
+export NVM_DIR="/home/yogevp/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if pgrep "xcape" > /dev/null
+then
+  spare_modifier="ISO_Level3_Shift"
+  xmodmap -e "keycode 65 = $spare_modifier"
+  xmodmap -e "keycode any = space"
+  xcape -e "$spare_modifier=space"
+fi
