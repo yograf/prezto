@@ -12,6 +12,9 @@ fi
 
 # Customize to your needs...
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+NPM_PACKAGES="${HOME}/.npm-global/bin"
+PATH="$NPM_PACKAGES:$PATH";
+
 alias d=drush
 alias gs="git status"
 alias c=clear
@@ -19,19 +22,14 @@ alias v=nvim
 alias gps="git push origin master"
 alias gpl="git pull --rebase"
 alias sv="sudo nvim"
+alias dc="docker-compose"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcp="docker-compose exec php --user 82 sh"
+eval "$(thefuck --alias)"
 
-
-if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
 
 
 
 export NVM_DIR="/home/yogevp/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-if pgrep "xcape" > /dev/null
-then
-  spare_modifier="ISO_Level3_Shift"
-  xmodmap -e "keycode 65 = $spare_modifier"
-  xmodmap -e "keycode any = space"
-  xcape -e "$spare_modifier=space"
-fi
