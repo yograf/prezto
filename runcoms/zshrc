@@ -22,14 +22,12 @@ alias v=nvim
 alias gps="git push origin master"
 alias gpl="git pull --rebase"
 alias sv="sudo nvim"
-alias dc="docker-compose"
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
-alias dcp="docker-compose exec php --user 82 sh"
 eval "$(thefuck --alias)"
 
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias h='nvr -o'
+  alias v='nvr -O'
+  alias t='nvr --remote-tab'
+fi
 
 
-
-export NVM_DIR="/home/yogevp/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
